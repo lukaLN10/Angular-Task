@@ -1,0 +1,37 @@
+<div class="wheel-container">
+  <h2>Wheel</h2>
+
+  <div class="wheel-wrapper">
+    <div class="arrow"></div>
+
+    <div #wheel class="wheel">
+      <div
+        *ngFor="let n of numbers; let i = index"
+        class="sector"
+        [style.transform]="'rotate(' + i * 36 + 'deg)'"
+      >
+        <div
+          class="sector-number"
+          [style.transform]="'rotate(' + -i * 36 + 'deg)'"
+        >
+          {{ n }}
+        </div>
+      </div>
+    </div>
+    <div class="result-popup" *ngIf="showResult">
+      <p>Winner Number: {{ resultNumber }}</p>
+      <button (click)="closeResult()">OK</button>
+    </div>
+  </div>
+
+  <div class="controls">
+    <input
+      type="number"
+      [(ngModel)]="selectedNumber"
+      placeholder="შეიყვანე 1-10"
+    />
+    <button (click)="spin()" [disabled]="spinning">Spin</button>
+  </div>
+
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>

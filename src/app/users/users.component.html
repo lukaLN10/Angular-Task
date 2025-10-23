@@ -1,0 +1,57 @@
+<h2 class="title">Users</h2>
+
+<form (ngSubmit)="onSearch()" #searchForm="ngForm" class="search-container">
+  <div class="search-wrapper">
+    <input
+      type="text"
+      name="search"
+      placeholder="Name, Last Name or Email ..."
+      [(ngModel)]="searchText"
+      class="search-input"
+    />
+
+    <button
+      type="button"
+      class="clear-btn"
+      *ngIf="searchText"
+      (click)="clearSearch()"
+      title="Clean"
+    >
+      ❌
+    </button>
+
+    <button type="submit" class="posts-btn">Search</button>
+  </div>
+</form>
+
+<table class="users-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th>Company</th>
+      <th>Posts</th>
+      <th>ToDo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let user of filtered" class="td-color">
+      <td data-label="Name">{{ user.name.split(" ")[0] }}</td>
+      <td data-label="Last Name">{{ user.name.split(" ")[1] || "-" }}</td>
+      <td data-label="Phone Number">{{ user.phone }}</td>
+      <td data-label="Email">{{ user.email }}</td>
+      <td data-label="Company">{{ user.company?.name }}</td>
+      <td data-label="Posts">
+        <button class="posts-btn" (click)="goToPosts(user.id)">Posts</button>
+      </td>
+      <td data-label="ToDo">
+        <button class="posts-btn" (click)="goToTodo(user.id)">ToDo</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="users.length === 0" class="loading">Loading users...</div>

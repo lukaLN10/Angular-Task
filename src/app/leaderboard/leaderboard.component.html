@@ -1,0 +1,33 @@
+<div class="leaderboard-container">
+  <h2 class="title">LeaderBoard</h2>
+
+  <div class="search-container filters">
+    <button
+      *ngFor="let w of weekTypes"
+      (click)="filterData(w)"
+      [class.active]="activeFilter === w"
+      class="posts-btn"
+    >
+      {{ w }}
+    </button>
+  </div>
+
+  <table class="users-table">
+    <thead>
+      <tr>
+        <th>Customer ID</th>
+        <th>Login Name</th>
+        <th>Place</th>
+        <th>Week</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredData" class="td-color">
+        <td>{{ item.customerId }}</td>
+        <td>{{ item.loginName }}</td>
+        <td>{{ item.place }}</td>
+        <td>{{ item.week }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,247 @@
+.promotions-div {
+  display: flex;
+  justify-content: center;
+}
+.promotions-btn {
+  width: 250px;
+  height: 40px;
+  border: 1px solid rgb(141, 102, 227);
+  border-radius: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(141, 102, 227);
+  transition: transform 0.1s, background-color 0.2s, color 0.2s;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  gap: 10px;
+  background-color: rgb(52, 37, 83);
+}
+.promotions-btn:hover {
+  background-color: rgb(141, 102, 227);
+  border: 1px soilid rgb(52, 37, 83);
+  color: white;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f6f4fb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.section-title {
+  text-align: center;
+  color: rgb(52, 37, 83);
+  font-size: 28px;
+  margin: 40px 0 20px 0;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: rgb(141, 102, 227);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.home-section {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  width: 260px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 4px -2px 20px 0px rgb(157 151 171 / 50%);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 4px 4px 25px 0px rgb(141 102 227 / 60%);
+}
+
+.card-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px 10px 25px 10px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: rgb(52, 37, 83);
+}
+
+.card-subtitle {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.divider {
+  width: 85%;
+  height: 2px;
+  background-color: rgb(141, 102, 227);
+  margin: 60px auto;
+  border-radius: 4px;
+  opacity: 0.3;
+}
+
+.learning-section {
+  text-align: center;
+  padding: 20px 0 60px;
+}
+
+.learning-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.learning-card {
+  background-color: white;
+  border-radius: 16px;
+  width: 250px;
+  padding: 25px;
+  box-shadow: 4px -2px 20px 0px rgb(157 151 171 / 50%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learning-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 4px 4px 25px 0px rgb(141 102 227 / 60%);
+}
+
+.learning-number {
+  font-size: 22px;
+  color: rgb(52, 37, 83);
+  margin: 5px 0;
+}
+
+.learning-text {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.learning-symbol {
+  font-size: 26px;
+  color: rgb(141, 102, 227);
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 1024px) {
+  .home-section,
+  .learning-section {
+    width: 80%;
+    padding: 30px 0;
+  }
+
+  .cards-container,
+  .learning-cards {
+    gap: 20px;
+  }
+
+  .card,
+  .learning-card {
+    width: 220px;
+  }
+
+  .promotions-btn {
+    width: 200px;
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-title::after {
+    width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-section,
+  .learning-section {
+    width: 90%;
+    padding: 20px 0;
+  }
+
+  .cards-container,
+  .learning-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .card,
+  .learning-card {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .promotions-btn {
+    width: 80%;
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .section-title::after {
+    width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container,
+  .learning-cards {
+    gap: 15px;
+  }
+
+  .card,
+  .learning-card {
+    width: 100%;
+  }
+
+  .promotions-btn {
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .section-title::after {
+    width: 40px;
+  }
+}

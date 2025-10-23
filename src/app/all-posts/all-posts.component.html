@@ -1,0 +1,33 @@
+<h2 class="title">Posts</h2>
+
+<table class="posts-table">
+  <thead>
+    <tr>
+      <th>Post Author</th>
+      <th>Title</th>
+      <th>Full Post</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of posts" class="td-color">
+      <td>{{ post.userName }}</td>
+      <td>{{ post.title }}</td>
+      <td>
+        <button class="posts-btn" (click)="viewPost(post)">View</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="posts.length === 0" class="loading">
+  Loading posts...
+</div>
+
+
+<div class="modal-backdrop" *ngIf="selectedPost">
+  <div class="modal">
+    <h3>{{ selectedPost.title }}</h3>
+    <p>{{ selectedPost.body }}</p>
+    <button class="posts-btn" (click)="closeModal()">Close</button>
+  </div>
+</div>

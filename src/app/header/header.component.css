@@ -1,0 +1,64 @@
+.header-div {
+  display: flex;
+  align-items: center;
+  background-color: rgb(141, 102, 227);
+  justify-content: space-between;
+  padding: 2% 5%;
+}
+
+.clickable-h1 {
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.1s, color 0.2s;   
+}
+
+.clickable-h1:hover {
+  background-color: rgb(141, 102, 227);
+  color: white; 
+}
+
+.clickable-h1:active {
+  transform: scale(0.95);
+  background-color: rgb(82, 59, 131);
+  color: white;
+}
+
+.right {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: default; 
+}
+
+.right:hover {
+  transform: scale(1.2); 
+  color: #ffffff; 
+}
+
+
+@media (max-width: 1024px) {
+  .header-div {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2% 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-div {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 3% 5%;
+  }
+
+  .right {
+    font-size: 0.9rem;
+  }
+
+  .clickable-h1 {
+    font-size: 1.2rem;
+  }
+}

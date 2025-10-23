@@ -1,0 +1,22 @@
+<h2 class="title">{{ userName }}'s Todos</h2>
+
+<table class="users-table" *ngIf="todos.length">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos" class="td-color">
+      <td>{{ todo.title }}</td>
+      <td [style.color]="todo.completed ? 'green' : 'red'">
+        {{ todo.completed }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="todos.length === 0" class="loading">
+  No todos found for this user.
+</div>
