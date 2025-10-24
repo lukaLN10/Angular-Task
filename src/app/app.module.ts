@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { ToDoComponent } from './to-do/to-do.component';
 import { WheelComponent } from './wheel/wheel.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { ErrorComponent } from './error/error.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     ToDoComponent,
     WheelComponent,
     LeaderboardComponent,
+    ErrorComponent,
 
 
   ],

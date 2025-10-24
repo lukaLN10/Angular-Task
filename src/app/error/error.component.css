@@ -1,0 +1,17 @@
+.error-div {
+  height: 255px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+h1{
+    color: #fc6089;;
+}
+
+h2{
+    font-size: 40px;
+ 
+
+}
