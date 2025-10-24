@@ -3,21 +3,20 @@
 
   <div class="wheel-wrapper">
     <div class="arrow"></div>
-
-    <div #wheel class="wheel">
-      <div
-        *ngFor="let n of numbers; let i = index"
-        class="sector"
-        [style.transform]="'rotate(' + i * 36 + 'deg)'"
-      >
-        <div
-          class="sector-number"
-          [style.transform]="'rotate(' + -i * 36 + 'deg)'"
-        >
-          {{ n }}
-        </div>
-      </div>
+<div #wheel class="wheel">
+  <div
+    *ngFor="let n of numbers; let i = index"
+    class="sector"
+    [style.transform]="'rotate(' + i * 36 + 'deg)'"
+  >
+    <div
+      class="sector-number"
+      [style.transform]="''"
+    >
+      {{ n }}
     </div>
+  </div>
+</div>
     <div class="result-popup" *ngIf="showResult">
       <p>Winner Number: {{ resultNumber }}</p>
       <button (click)="closeResult()">OK</button>
